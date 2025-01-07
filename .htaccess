@@ -1,9 +1,0 @@
-# Enable URL rewriting
-RewriteEngine On
-
-# Rewrite URLs without the .php extension to corresponding .php files
-RewriteCond %{REQUEST_FILENAME}.php -f
-RewriteRule ^([^/]+)/?$ $1.php [L]
-
-# Handle index files without extension
-DirectoryIndex index.php
