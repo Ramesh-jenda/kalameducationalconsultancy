@@ -1,0 +1,32 @@
+{
+  "metaTags": {
+      "index": {
+          "title": "Kalam Educational Consultancy - Expert Teacher Training & Academic Support",
+          "description": "Kalam Educational Consultancy provides comprehensive teacher training, student academic support, and educational development services. Transform your educational journey with expert guidance."
+      },
+      "about": {
+          "title": "About Kalam Educational Consultancy - Leading Education Experts",
+          "description": "Discover how Kalam Educational Consultancy is transforming education through expert teacher training, student support, and institutional development services."
+      },
+      "contact": {
+          "title": "Contact Kalam Educational Consultancy - Educational Excellence Partners",
+          "description": "Connect with Kalam Educational Consultancy for innovative educational solutions. Expert consultation in teacher training, academic support, and educational development."
+      },
+      "teachers-training": {
+          "title": "Teacher Training & Development Programs | Kalam Educational",
+          "description": "Elevate teaching excellence with Kalam's comprehensive teacher training programs. Professional development, modern teaching methodologies, and leadership training."
+      },
+      "teachers-consultancy": {
+          "title": "Teachers Consultancy Services - Kalam Educational Consultancy",
+          "description": "Expert consultancy services for teachers including professional development, classroom management strategies, and educational technology integration."
+      },
+      "academic-support": {
+          "title": "Academic Support for Students | Kalam Educational Consultancy",
+          "description": "Comprehensive academic support services for students including personalized tutoring, study skills development, and exam preparation strategies."
+      },
+      "educational-development-advisory": {
+          "title": "Educational Development Advisory | Kalam Educational Consultancy",
+          "description": "Strategic educational development solutions for institutions. Expert guidance in curriculum development, quality assurance, and educational leadership."
+      }
+  }
+}

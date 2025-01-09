@@ -1,0 +1,13 @@
+# Enable URL rewriting
+RewriteEngine On
+
+# Rewrite URLs without .php extension
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^([^/]+)/?$ $1.php [L]
+
+# Rewrite URLs without .html extension
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^([^/]+)/?$ $1.html [L]
+
+# Handle index files without extension
+DirectoryIndex index.php index.html

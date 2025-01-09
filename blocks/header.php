@@ -1,10 +1,23 @@
+<?php
+$metadataFile = 'metadata.json';
+if (file_exists($metadataFile)) {
+    $metadata = json_decode(file_get_contents($metadataFile), true);
+} else {
+    $metadata = [];
+}
+// Get the current file name without extension
+$current_page = pathinfo(basename($_SERVER['PHP_SELF']), PATHINFO_FILENAME);
+// Fetch meta tags from JSON based on the current file name
+$metaTitle = $metadata['metaTags'][$current_page]['title'] ?? "Yava Tech - Leading IT Solutions Provider";
+$metaDescription = $metadata['metaTags'][$current_page]['description'] ?? "Yava Tech delivers global IT solutions with integrity, quality, and responsiveness.";
+?>
 <!doctype html>
 <html class="no-js" lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>kalam educational consultancy</title>
-    <meta name="description" content="kalam educational consultancy">
+    <title><?php echo htmlspecialchars($metaTitle); ?></title>
+    <meta name="description" content="<?php echo htmlspecialchars($metaDescription); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
@@ -58,22 +71,22 @@
                                 </div>
                                 <div class="tgmenu__navbar-wrap tgmenu__main-menu d-none d-lg-flex">
                                     <ul class="navigation">
-                                        <li class="active"><a href="#">Home</a>
+                                        <li class="<?php echo ($current_page == 'index') ? 'active' : ''; ?>"><a href="index">Home</a>
                                             
                                         </li>
-                                        <li><a href="about">About Us</a>
+                                        <li class=" <?php echo ($current_page == 'about') ? 'active' : ''; ?>"><a href="about">About Us</a>
                                             
                                         </li>
-                                        <li class="menu-item-has-children"><a href="#">Services</a>
+                                        <li class="menu-item-has-children  <?php echo ($current_page == 'teachers-traning' ||  $current_page == 'teachers-consultancy' || $current_page == 'academic-support' || $current_page == 'educational-development-advisory' ) ? 'active' : ''; ?>"><a href="#">Our Courses</a>
                                             <ul class="sub-menu">
-                                                <li><a href="#">Teachers Training</a></li>
-                                                <li><a href="#">Teachers Consultancy</a></li>
-                                                <li><a href="#">Academic support for students</a></li>
-                                                <li><a href="#">Educational development advisory</a></li>
+                                                <li class=" <?php echo ($current_page == 'teachers-traning') ? 'active' : ''; ?>"><a href="teachers-traning">Teachers Training</a></li>
+                                                <li class=" <?php echo ($current_page == 'teachers-consultancy') ? 'active' : ''; ?>"><a href="teachers-consultancy">Teachers Consultancy</a></li>
+                                                <li class=" <?php echo ($current_page == 'academic-support') ? 'active' : ''; ?>"><a href="academic-support">Academic support for students</a></li>
+                                                <li class=" <?php echo ($current_page == 'educational-development-advisory') ? 'active' : ''; ?>"><a href="educational-development-advisory">Educational development advisory</a></li>
                                             </ul>
                                         </li>
                                         
-                                        <li><a href="contact">Contact</a></li>
+                                        <li class=" <?php echo ($current_page == 'contact') ? 'active' : ''; ?>"><a href="contact">Contact</a></li>
                                     </ul>
                                 </div>
                                 <div class="tgmenu__action tgmenu__action-three">

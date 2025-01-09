@@ -7421,7 +7421,7 @@ textarea {
   gap: 9px;
   font-size: 17px;
   font-weight: 500;
-  line-height: 1;
+  line-height: 1.5;
   margin-bottom: 19px;
 }
 .about__list-item-two li:last-child {
@@ -13821,6 +13821,7 @@ textarea {
   gap: 10px;
   margin-bottom: 13px;
   padding-bottom: 13px;
+  justify-content: space-between;
 }
 .project__details-info-wrap > .list-wrap > li span {
   font-weight: 600;
@@ -14602,8 +14603,7 @@ textarea {
   -o-border-radius: 20px;
   -ms-border-radius: 20px;
   border-radius: 20px;
-  padding: 54px 55px;
-  margin-bottom: 40px;
+  padding: 30px;
 }
 @media (max-width: 1199.98px) {
   .team__details-info-wrap {
@@ -17513,7 +17513,7 @@ blockquote cite {
 .call__back-form-two .form-grp {
   margin-bottom: 10px;
 }
-.call__back-form-two .form-grp textarea, .call__back-form-two .form-grp input {
+.call__back-form-two .form-grp textarea, .call__back-form-two .form-grp input, .call__back-form-two .form-grp select {
   background: #1B5AFF;
   color: var(--tg-color-white-default);
   font-size: 14px;

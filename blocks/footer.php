@@ -10,7 +10,8 @@
                     <div class="footer__widget">
                         <h4 class="footer__widget-title">About Company</h4>
                         <div class="footer__content-two">
-                            <p>Enhancing teacher skills and student success through expert training, consultancy, and academic support.</p>
+                            <p>Enhancing teacher skills and student success through expert training, consultancy, and
+                                academic support.</p>
                             <div class="footer__social footer__social-three">
                                 <span class="title">Follow us On:</span>
                                 <ul class="list-wrap">
@@ -67,11 +68,11 @@
                     <div class="footer__widget">
                         <h4 class="footer__widget-title">Our Services</h4>
                         <ul class="footer__widget-link list-wrap">
-                            <li><a href="#">Teachers Training</a></li>
-                            <li><a href="#">Teachers Consultancy</a></li>
-                            <li><a href="#">Academic support for students</a></li>
-                            <li><a href="#">Educational development advisory</a></li>
-                            
+                            <li><a href="teachers-traning">Teachers Training</a></li>
+                            <li><a href="teachers-consultancy">Teachers Consultancy</a></li>
+                            <li><a href="academic-support">Academic support for students</a></li>
+                            <li><a href="educational-development-advisory">Educational development advisory</a></li>
+
                         </ul>
                     </div>
                 </div>
@@ -79,7 +80,7 @@
                     <div class="footer__widget">
                         <h4 class="footer__widget-title">Quick links</h4>
                         <ul class="footer__widget-link list-wrap">
-                        <li><a href="home">Home</a></li>
+                            <li><a href="home">Home</a></li>
                             <li><a href="about">About</a></li>
                             <li><a href="contact">Contact</a></li>
                             <li><a href="#">Privacy Policy</a></li>
@@ -92,13 +93,14 @@
                         <h4 class="footer__widget-title">Contact</h4>
                         <div class="footer__contact-two">
                             <p>H No 5-152, 1st Floor,
-Road no.2,<br/> Mytrinagar Phase II, Madeenaguda,<br/>
-Hyderabad- 500049</p>
+                                Road no.2,<br /> Mytrinagar Phase II, Madeenaguda,<br />
+                                Hyderabad- 500049</p>
                             <ul class="list-wrap">
                                 <li><i class="flaticon-envelope"></i><a
                                         href="mailto:info@kalameducationalconsultancy.com">info@kalameducationalconsultancy.com</a>
                                 </li>
-                                <li><i class="flaticon-telephone"></i><a href="tel:+917815899695">+91 7815899695                                </a></li>
+                                <li><i class="flaticon-telephone"></i><a href="tel:+917815899695">+91 7815899695 </a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -114,7 +116,7 @@ Hyderabad- 500049</p>
                 </div>
                 <div class="col-md-6">
                     <div class="copyright__content-three">
-                        <p>Copyright ©2025 Kalam Educational Consultancy | All Right Reserved</p>
+                        <p>Copyright ©2025 Kalam Educational Consultancy | All Rights Reserved</p>
                     </div>
                 </div>
             </div>
@@ -132,7 +134,7 @@ Hyderabad- 500049</p>
 <script src="assets/js/swiper-bundle.min.js"></script>
 <script src="assets/js/jquery.parallaxScroll.min.js"></script>
 <script src="assets/js/jquery.marquee.min.js"></script>
-<script src="assets/js/tg-cursor.min.js"></script>
+<!-- <script src="assets/js/tg-cursor.min.js"></script> -->
 <script src="assets/js/ajax-form.js"></script>
 <script src="assets/js/svg-inject.min.js"></script>
 <script src="assets/js/wow.min.js"></script>
