@@ -8,19 +8,35 @@ if (file_exists($metadataFile)) {
 // Get the current file name without extension
 $current_page = pathinfo(basename($_SERVER['PHP_SELF']), PATHINFO_FILENAME);
 // Fetch meta tags from JSON based on the current file name
-$metaTitle = $metadata['metaTags'][$current_page]['title'] ?? "Yava Tech - Leading IT Solutions Provider";
-$metaDescription = $metadata['metaTags'][$current_page]['description'] ?? "Yava Tech delivers global IT solutions with integrity, quality, and responsiveness.";
+$metaTitle = $metadata['metaTags'][$current_page]['title'] ?? "Kalam Educational Consultancy - Expert Teacher Training & Academic Support";
+$metaDescription = $metadata['metaTags'][$current_page]['description'] ?? "Kalam Educational Consultancy provides comprehensive teacher training, student academic support, and educational development services. Transform your educational journey with expert guidance.";
+$ogURL = $metadata['metaTags'][$current_page]['url'] ?? "https://kalameducationalconsultancy.com/";
+
 ?>
 <!doctype html>
 <html class="no-js" lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
     <title><?php echo htmlspecialchars($metaTitle); ?></title>
     <meta name="description" content="<?php echo htmlspecialchars($metaDescription); ?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+    <meta property="og:site_name" content="kalameducationalconsultancy.com" />
+    <meta property="og:logo" content="assets/img/logo.png" size="180x180" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="<?php echo htmlspecialchars(string: $ogURL);?>" />
+    <meta property="og:title" content="<?php echo htmlspecialchars(string: $metaTitle); ?>" />
+    <meta property="og:description" content="<?php echo htmlspecialchars($metaDescription); ?>" />
+    <meta property="og:image" content="assets/img/logo.png?width=350&amp;format=auto" />
+    <meta property="og:image:width" content="750" />
+    <meta property="og:image:height" content="350" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="https://twitter.com/" />
+    <meta name="twitter:title" content="<?php echo htmlspecialchars($metaTitle); ?>" />
+    <meta name="twitter:description" content="<?php echo htmlspecialchars($metaDescription); ?>" />
+    <meta name="twitter:image" content="assets/img/logo.png?width=350&amp;format=auto" />
     <!-- Place favicon.ico in the root directory -->
 
     <!-- CSS here -->
@@ -71,28 +87,48 @@ $metaDescription = $metadata['metaTags'][$current_page]['description'] ?? "Yava 
                                 </div>
                                 <div class="tgmenu__navbar-wrap tgmenu__main-menu d-none d-lg-flex">
                                     <ul class="navigation">
-                                        <li class="<?php echo ($current_page == 'index') ? 'active' : ''; ?>"><a href="index">Home</a>
-                                            
+                                        <li class="<?php echo ($current_page == 'index') ? 'active' : ''; ?>"><a
+                                                href="index">Home</a>
+
                                         </li>
-                                        <li class=" <?php echo ($current_page == 'about') ? 'active' : ''; ?>"><a href="about">About Us</a>
-                                            
+                                        <li class=" <?php echo ($current_page == 'about') ? 'active' : ''; ?>"><a
+                                                href="about">About Us</a>
+
                                         </li>
-                                        <li class="menu-item-has-children  <?php echo ($current_page == 'teachers-traning' ||  $current_page == 'teachers-consultancy' || $current_page == 'academic-support' || $current_page == 'educational-development-advisory' ) ? 'active' : ''; ?>"><a href="#">Our Courses</a>
+                                        <li
+                                            class="menu-item-has-children  <?php echo ($current_page == 'teachers-traning' || $current_page == 'teachers-consultancy' || $current_page == 'academic-support' || $current_page == 'educational-development-advisory') ? 'active' : ''; ?>">
+                                            <a href="#">Our Services</a>
                                             <ul class="sub-menu">
-                                                <li class=" <?php echo ($current_page == 'teachers-traning') ? 'active' : ''; ?>"><a href="teachers-traning">Teachers Training</a></li>
-                                                <li class=" <?php echo ($current_page == 'teachers-consultancy') ? 'active' : ''; ?>"><a href="teachers-consultancy">Teachers Consultancy</a></li>
-                                                <li class=" <?php echo ($current_page == 'academic-support') ? 'active' : ''; ?>"><a href="academic-support">Academic support for students</a></li>
-                                                <li class=" <?php echo ($current_page == 'educational-development-advisory') ? 'active' : ''; ?>"><a href="educational-development-advisory">Educational development advisory</a></li>
+                                                <li
+                                                    class=" <?php echo ($current_page == 'teachers-traning') ? 'active' : ''; ?>">
+                                                    <a href="teachers-traning">Teachers Training Programs</a>
+                                                </li>
+                                                <li
+                                                    class=" <?php echo ($current_page == 'teachers-consultancy') ? 'active' : ''; ?>">
+                                                    <a href="teachers-consultancy">Teacher Consultancy</a>
+                                                </li>
+                                                <li
+                                                    class=" <?php echo ($current_page == 'academic-support') ? 'active' : ''; ?>">
+                                                    <a href="academic-support">Academic support for students</a>
+                                                </li>
+                                                <li
+                                                    class=" <?php echo ($current_page == 'educational-development-advisory') ? 'active' : ''; ?>">
+                                                    <a href="educational-development-advisory">Educational development
+                                                        advisory</a>
+                                                </li>
                                             </ul>
                                         </li>
-                                        
-                                        <li class=" <?php echo ($current_page == 'contact') ? 'active' : ''; ?>"><a href="contact">Contact</a></li>
+
+                                        <li class=" <?php echo ($current_page == 'contact') ? 'active' : ''; ?>"><a
+                                                href="contact">Contact</a></li>
                                     </ul>
                                 </div>
                                 <div class="tgmenu__action tgmenu__action-three">
                                     <ul class="list-wrap">
                                         <li class="header-contact">
-                                            <a href="tel:+917815899695" class="header-contact-info"><i class="flaticon-telephone"></i>+91 78158 99695                                            </a>
+                                            <a href="tel:+91 9666999392" class="header-contact-info"><i
+                                                    class="flaticon-telephone"></i>+91 96669 99392
+                                            </a>
                                         </li>
                                         <li class="header-btn header-btn-two">
                                             <a href="contact" class="tg-btn">Get a quote</a>
@@ -115,7 +151,7 @@ $metaDescription = $metadata['metaTags'][$current_page]['description'] ?? "Yava 
                 <div class="nav-logo">
                     <a href="index"><img src="assets/img/logo.png" alt="Logo"></a>
                 </div>
-                
+
                 <div class="tgmobile__menu-outer">
                     <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
                 </div>
@@ -151,287 +187,392 @@ $metaDescription = $metadata['metaTags'][$current_page]['description'] ?? "Yava 
         box-shadow: none;
     }
 </style>
- <!-- breadcrumb-area -->
- <section class="breadcrumb__area">
-            <div class="breadcrumb__bg" data-background="assets/img/bg/breadcrumb__bg.jpg"></div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="breadcrumb__content">
-                            <h2 class="title">Teachers Training</h2>
-                            <nav class="breadcrumb">
-                                <span property="itemListElement" typeof="ListItem">
-                                    <a href="index">Home</a>
-                                </span>
-                                <span class="breadcrumb-separator"><i class="fas fa-angle-right"></i></span>
-                                <span property="itemListElement" typeof="ListItem">Teachers Training</span>
-                            </nav>
-                        </div>
-                    </div>
+<!-- breadcrumb-area -->
+<section class="breadcrumb__area">
+    <div class="breadcrumb__bg" data-background="assets/img/bg/breadcrumb__bg.jpg"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="breadcrumb__content">
+                    <h2 class="title">Teachers Training</h2>
+                    <nav class="breadcrumb">
+                        <span property="itemListElement" typeof="ListItem">
+                            <a href="index">Home</a>
+                        </span>
+                        <span class="breadcrumb-separator"><i class="fas fa-angle-right"></i></span>
+                        <span property="itemListElement" typeof="ListItem">Teacher Training Programs</span>
+                    </nav>
                 </div>
             </div>
-        </section>
-        <!-- breadcrumb-area-end -->
-        
-    <!-- course-details-area -->
-    <section class="project__details-area section-py-130">
-            <div class="container">
-                <div class="row">
-                    <div class="col-70">
-                        <div class="project__details-wrap">
-                            <div class="project__details-thumb">
-                                <img src="assets/img/teachers-training.jpg" alt="img">
-                            </div>
-                            <div class="project__details-content">
-                                <h2 class="title">Empowering Teachers for 21st-Century Classrooms</h2>
-                                <p>Our teacher training programs provide educators with the skills, tools, and support to thrive in modern classrooms. From advanced teaching methodologies to leadership and technology integration, we prepare teachers to address diverse learner needs and foster a culture of growth and innovation. With personalized guidance and hands-on learning, we aim to create confident, effective educators who are the backbone of stronger school communities.
+        </div>
+    </div>
+</section>
+<!-- breadcrumb-area-end -->
 
-</p>
-                                <div class="project__details-challenge">
-                                    <h2 class="title-two">Comprehensive Benefits for Teachers</h2>
-                                    <p>Our programs are designed to support teachers in their professional journey by offering tailored solutions to real-world challenges. Teachers benefit from enhanced skills, improved confidence, and the ability to deliver better classroom results. By fostering stronger connections with parents and creating a positive school culture, we aim to elevate the educational experience for everyone involved.</p>
-                                    <ul class="list-wrap about__list-item-two">
-                                        <li>
-                                            <div class="icon">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="11" viewBox="0 0 14 11" fill="none">
-                                                    <path d="M12.091 2L5.091 9L1.90918 5.81818" stroke="currentColor" stroke-width="2.1875" stroke-linecap="round" stroke-linejoin="round" />
-                                                </svg>
-                                            </div>
-                                            Enhanced teaching effectiveness and confidence.
-                                        </li>
-                                        <li>
-                                            <div class="icon">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="11" viewBox="0 0 14 11" fill="none">
-                                                    <path d="M12.091 2L5.091 9L1.90918 5.81818" stroke="currentColor" stroke-width="2.1875" stroke-linecap="round" stroke-linejoin="round" />
-                                                </svg>
-                                            </div>
-                                            Improved student outcomes and achievements.
-                                        </li>
-                                        <li>
-                                            <div class="icon">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="11" viewBox="0 0 14 11" fill="none">
-                                                    <path d="M12.091 2L5.091 9L1.90918 5.81818" stroke="currentColor" stroke-width="2.1875" stroke-linecap="round" stroke-linejoin="round" />
-                                                </svg>
-                                            </div>
-                                            Increased parental engagement and satisfaction.
-                                        </li>
-                                        <li>
-                                            <div class="icon">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="11" viewBox="0 0 14 11" fill="none">
-                                                    <path d="M12.091 2L5.091 9L1.90918 5.81818" stroke="currentColor" stroke-width="2.1875" stroke-linecap="round" stroke-linejoin="round" />
-                                                </svg>
-                                            </div>
-                                            Stronger school communities and culture.
-                                        </li>
-                                        
-                                    </ul>
-                                </div>
-                                <div class="project__details-report">
-                                    <h2 class="title-two">Flexible and Interactive Learning Programs</h2>
-                                    <p>We offer both online and offline courses to suit the needs of teachers and candidates. These self-paced programs are designed to provide flexibility while ensuring a comprehensive understanding of teaching methodologies, classroom management, and educational leadership. Each program includes personalized coaching and interactive workshops to make learning engaging and impactful.</p>
-                                    <p>Our training includes international diplomas such as Early Childhood Care, Montessori Teacher Training, Elementary Education, Educational Leadership, and Special Needs Education. Through hands-on techniques and innovative strategies, we ensure teachers are equipped to handle 21st-century learners, addressing their emotional, behavioral, and conceptual needs effectively.</p>
-                                </div>
-                            </div>
-                        </div>
+<!-- course-details-area -->
+<section class="project__details-area section-py-130">
+    <div class="container">
+        <div class="row">
+            <div class="col-70">
+                <div class="project__details-wrap">
+                    <div class="project__details-thumb">
+                        <img src="assets/img/teachers-training.jpg" alt="img">
                     </div>
-                    <div class="col-30">
-                        <aside class="project__sidebar">
-                            <div class="sidebar__widget">
-                                <div class="project__details-info-wrap">
-                                    <h4 class="sidebar__widget-title">Fee Details</h4>
-                                    <ul class="list-wrap">
-                                        <li><span>School Fee :</span>80,000</li>
-                                        <li><span>Course Fee :</span>50,000</li>
-                                        <li><span>Exam Fee :</span>10,000</li>
-                                        <li><span>Dress Fee :</span>5,000</li>
-                                        
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="sidebar__widget">
-                                <div class="sidebar__contact">
-                                    <h4 class="title">Transform Your Future with Expert Guidance</h4>
-                                    <p>Enhance skills, connect experts, and achieve educational excellence today.</p>
-                                    <a href="contact" class="tg-btn tg-btn-three">Contact With Us <img src="assets/img/icons/right_arrow.svg" alt="" class="injectable"></a>
-                                    <div class="shape">
-                                        <img src="assets/img/images/sidebar_contact_shape01.svg" alt="shape" class="rotateme">
-                                        <img src="assets/img/images/sidebar_contact_shape02.svg" alt="shape" class="alltuchtopdown">
+                    <div class="project__details-content">
+                        <h2 class="title">Teacher Training Programs</h2>
+                        <p>The teachers who register with us for the certification courses have the benefits of
+                            enhancing their career and have a happy long-term association with us for any challenges in
+                            career development, we are available all the time to support and guide our teachers. We have
+                            huge respect for our teachers because they are the NATION BUILDERS and may need little
+                            motivation and guidance when needed.
+                        </p>
+                        <div class="project__details-challenge">
+
+                            <ul class="list-wrap about__list-item-two">
+                                <li>
+                                    <div class="icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="11"
+                                            viewBox="0 0 14 11" fill="none">
+                                            <path d="M12.091 2L5.091 9L1.90918 5.81818" stroke="currentColor"
+                                                stroke-width="2.1875" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="sidebar__widget">
-                                <h4 class="sidebar__widget-title">Course Brochure</h4>
-                                <div class="sidebar__brochure">
-                                    <p>Empowering education through expert training, consultancy, and academic solutions.</p>
-                                    <a href="#" target="_blank" download>
-                                        <span class="icon">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="24" viewBox="0 0 18 24" fill="none">
-                                                <path d="M18 21V6.75L11.25 0H3C2.20435 0 1.44129 0.316071 0.87868 0.87868C0.31607 1.44129 0 2.20435 0 3V21C0 21.7957 0.31607 22.5587 0.87868 23.1213C1.44129 23.6839 2.20435 24 3 24H15C15.7957 24 16.5587 23.6839 17.1213 23.1213C17.6839 22.5587 18 21.7957 18 21ZM11.25 4.5C11.25 5.09674 11.4871 5.66903 11.909 6.09099C12.331 6.51295 12.9033 6.75 13.5 6.75H16.5V21C16.5 21.3978 16.342 21.7794 16.0607 22.0607C15.7794 22.342 15.3978 22.5 15 22.5H3C2.60218 22.5 2.22064 22.342 1.93934 22.0607C1.65804 21.7794 1.5 21.3978 1.5 21V3C1.5 2.60218 1.65804 2.22064 1.93934 1.93934C2.22064 1.65804 2.60218 1.5 3 1.5H11.25V4.5Z" fill="currentColor" />
-                                                <path d="M3.9045 21.1305C3.61214 21.0136 3.37659 20.7877 3.2475 20.5005C2.955 19.9185 3.0525 19.3365 3.3675 18.8475C3.6645 18.387 4.1565 17.9955 4.713 17.667C5.41791 17.2672 6.16303 16.9429 6.936 16.6995C7.53629 15.6204 8.06833 14.5047 8.529 13.359C8.25357 12.7332 8.03762 12.0828 7.884 11.4165C7.755 10.8165 7.7055 10.2225 7.815 9.7125C7.9275 9.1815 8.226 8.7045 8.79 8.478C9.078 8.3625 9.39 8.298 9.693 8.3625C9.84542 8.39495 9.9887 8.46091 10.1125 8.55561C10.2362 8.65031 10.3373 8.77137 10.4085 8.91C10.5405 9.156 10.5885 9.444 10.599 9.717C10.6095 9.999 10.581 10.311 10.5285 10.638C10.4025 11.403 10.1235 12.339 9.7485 13.329C10.1623 14.214 10.6543 15.0604 11.2185 15.858C11.8862 15.8053 12.5577 15.8304 13.2195 15.933C13.7655 16.032 14.3205 16.2255 14.6595 16.6305C14.8395 16.8465 14.949 17.1105 14.9595 17.4075C14.97 17.6955 14.889 17.9805 14.7525 18.252C14.6343 18.5036 14.4509 18.719 14.2215 18.876C13.9947 19.0239 13.7269 19.0964 13.4565 19.083C12.96 19.062 12.4755 18.789 12.057 18.4575C11.5481 18.0367 11.0896 17.5586 10.6905 17.0325C9.67613 17.1476 8.6738 17.3514 7.695 17.6415C7.24677 18.4364 6.73511 19.1939 6.165 19.9065C5.727 20.4315 5.2515 20.8905 4.7745 21.087C4.50043 21.211 4.18957 21.2265 3.9045 21.1305ZM5.973 18.279C5.724 18.393 5.493 18.513 5.2845 18.636C4.7925 18.927 4.473 19.2105 4.314 19.4565C4.173 19.674 4.17 19.8315 4.254 19.998C4.269 20.031 4.284 20.052 4.293 20.064C4.3109 20.0592 4.32844 20.0532 4.3455 20.046C4.551 19.962 4.878 19.6935 5.298 19.188C5.53687 18.8955 5.76211 18.5922 5.973 18.279ZM8.433 16.284C8.93389 16.1671 9.4393 16.0705 9.948 15.9945C9.67488 15.5765 9.41965 15.1471 9.183 14.7075C8.94773 15.2394 8.69763 15.7646 8.433 16.2825V16.284ZM12.102 16.959C12.327 17.2035 12.546 17.409 12.7545 17.574C13.1145 17.859 13.365 17.9535 13.5015 17.958C13.538 17.9628 13.5751 17.9548 13.6065 17.9355C13.6689 17.8862 13.7175 17.8216 13.7475 17.748C13.8008 17.6566 13.8312 17.5537 13.836 17.448C13.8351 17.4128 13.8212 17.3791 13.797 17.3535C13.719 17.2605 13.497 17.1255 13.02 17.04C12.7166 16.9893 12.4096 16.9627 12.102 16.9605V16.959ZM9.117 11.7C9.24324 11.2928 9.34344 10.8779 9.417 10.458C9.4635 10.176 9.4815 9.9435 9.474 9.7605C9.47441 9.65954 9.4582 9.55919 9.426 9.4635C9.35096 9.47279 9.27769 9.493 9.2085 9.5235C9.078 9.576 8.9715 9.6825 8.9145 9.948C8.8545 10.236 8.8695 10.6515 8.9835 11.181C9.0195 11.3475 9.0645 11.5215 9.1185 11.7H9.117Z" fill="currentColor" />
-                                            </svg>
-                                        </span>
-                                        <span class="content">
-                                            <strong>PDF. Download</strong>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23" fill="none">
-                                                <path d="M7.5 11.5L11.5 15.5M11.5 15.5L15.5 11.5M11.5 15.5V7.5M21.5 11.5C21.5 17.0228 17.0228 21.5 11.5 21.5C5.97715 21.5 1.5 17.0228 1.5 11.5C1.5 5.97715 5.97715 1.5 11.5 1.5C17.0228 1.5 21.5 5.97715 21.5 11.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                            </svg>
-                                        </span>
-                                    </a>
-                                    
-                                </div>
-                            </div>
-                        </aside>
+                                    Teaching and learning methodologies: During the course, teachers will have more
+                                    exposure to the latest techniques of teaching and learning methods and experience
+                                    the best practices that work for the mixed abilities learners in the classroom.
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="11"
+                                            viewBox="0 0 14 11" fill="none">
+                                            <path d="M12.091 2L5.091 9L1.90918 5.81818" stroke="currentColor"
+                                                stroke-width="2.1875" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                    Educational leadership and management: We believe that TEACHER LEADERSHIP is the
+                                    best to address any of the student challenges. We provide an opportunity to explore
+                                    what is teacher leadership and why is it
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="11"
+                                            viewBox="0 0 14 11" fill="none">
+                                            <path d="M12.091 2L5.091 9L1.90918 5.81818" stroke="currentColor"
+                                                stroke-width="2.1875" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                    Technology integration and innovation: To teach the current generation of learners,
+                                    teachers of 21st century should be equipped with the technology, integration and
+                                    innovative techniques to make their classrooms more inclusive, interesting and
+                                    engaging.
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="11"
+                                            viewBox="0 0 14 11" fill="none">
+                                            <path d="M12.091 2L5.091 9L1.90918 5.81818" stroke="currentColor"
+                                                stroke-width="2.1875" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                    Data-driven decision making is the need of the hour and for these first teachers
+                                    should learn how to use it and later they should be able to plan for their
+                                    respective subjects based on the given contexts and situations.
+                                </li>
+
+                            </ul>
+                        </div>
+                        <div class="project__details-report">
+                            <strong style="margin-bottom: 25px; display:block">BENEFITS for teachers who register with
+                                us: Teachers get an opportunity to all the above-mentioned areas and they see themselves
+                                and their classroom result oriented. We provide one on one interaction and guide case to
+                                case situations because no one individual is alike in their ideas, thoughts and
+                                perceptions</strong>
+                            <ul class="list-none">
+                                <li>
+                                    <p>- Improved student outcomes and achievement</p>
+                                </li>
+                                <li>
+                                    <p>- Enhanced teacher effectiveness and confidence</p>
+                                </li>
+                                <li>
+                                    <p>- Increased parental engagement and satisfaction</p>
+                                </li>
+                                <li>
+                                    <p>- Stronger school communities and culture</p>
+                                </li>
+                            </ul>
+                        </div><br />
+                        <div class="project__details-report">
+                            <h3>Ignite Learning, Empower Career Growth of Teachers</h3><br />
+                            <ul class="list-wrap about__list-item-two">
+                                <li>
+                                    <div class="icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="11"
+                                            viewBox="0 0 14 11" fill="none">
+                                            <path d="M12.091 2L5.091 9L1.90918 5.81818" stroke="currentColor"
+                                                stroke-width="2.1875" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </div>International Diploma in Early Childhood Care and Education (IDECCE)
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="11"
+                                            viewBox="0 0 14 11" fill="none">
+                                            <path d="M12.091 2L5.091 9L1.90918 5.81818" stroke="currentColor"
+                                                stroke-width="2.1875" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </div>International Diploma in Montessori Teachers Training (IDMTTC)
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="11"
+                                            viewBox="0 0 14 11" fill="none">
+                                            <path d="M12.091 2L5.091 9L1.90918 5.81818" stroke="currentColor"
+                                                stroke-width="2.1875" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </div>International Diploma in Diploma in Elementary Education (D.el.ed)
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="11"
+                                            viewBox="0 0 14 11" fill="none">
+                                            <path d="M12.091 2L5.091 9L1.90918 5.81818" stroke="currentColor"
+                                                stroke-width="2.1875" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </div>International Diploma in Educational leadership Administration & Management
+                                    IDELAM)
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="11"
+                                            viewBox="0 0 14 11" fill="none">
+                                            <path d="M12.091 2L5.091 9L1.90918 5.81818" stroke="currentColor"
+                                                stroke-width="2.1875" stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </div>International Diploma in Special Needs Education (IDSNE)’
+                                </li>
+
+                            </ul><br />
+                            <p>Our Training will be with good Tips and Techniques needed to manage the 21st century
+                                learners, their emotional needs, behavioural issues, conceptual gaps to address. The
+                                workshops we conduct will give lot of scope for interactive sessions, hands-on learning
+                                and coaching to ensure that the personalized guidance and support shall be extended.
+                            </p>
+                            <p>We have Offline and Online Courses: Flexible, self-paced learning as per the teachers and
+                                the candidates requirement. </p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
-        <!-- course-details-area-end -->
+            <div class="col-30">
+                <aside class="project__sidebar">
+                    <div class="sidebar__widget">
+                        <div class="project__details-info-wrap">
+                            <h4 class="sidebar__widget-title">Fee Details</h4>
+                            <ul class="list-wrap">
+                                <li><span>School Fee :</span>80,000</li>
+                                <li><span>Course Fee :</span>50,000</li>
+                                <li><span>Exam Fee :</span>10,000</li>
+                                <li><span>Dress Fee :</span>5,000</li>
 
-    </main>
-    <!-- main-area-end -->
-    
-    <!-- footer-area -->
-    <footer class="footer__area-three fix">
-        <div class="container">
-            <div class="footer__top-two footer__top-three">
-                <div class="row">
-                    <div class="col-xl-3 col-lg-4 col-md-6">
-                        <div class="footer__widget">
-                            <h4 class="footer__widget-title">About Company</h4>
-                            <div class="footer__content-two">
-                                <p>Enhancing teacher skills and student success through expert training, consultancy, and
-                                    academic support.</p>
-                                <div class="footer__social footer__social-three">
-                                    <span class="title">Follow us On:</span>
-                                    <ul class="list-wrap">
-                                        <li><a href="https://www.facebook.com/" target="_blank"><svg viewBox="0 0 7 14"
-                                                    fill="none" xmlns="http://www.w3.org/2000/svg"
-                                                    data-inject-url="https://html.themegenix.com/beeko/assets/img/icons/facebook.svg"
-                                                    class="injectable">
-                                                    <path
-                                                        d="M2.00911 13.6558H4.40208V7.46277H6.40303L6.70521 5.05342H4.40208V3.50941C4.40208 2.81375 4.58993 2.33867 5.55365 2.33867H6.78689V0.175351C6.57454 0.1499 5.84766 0.0820312 4.99828 0.0820312C3.21785 0.0820312 2.00911 1.21035 2.00911 3.27187V5.05342H0V7.46277H2.00911V13.6558Z"
-                                                        fill="currentColor"></path>
-                                                </svg></a></li>
-                                        <li><a href="https://x.com/home" target="_blank">
-                                                <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"
-                                                    data-inject-url="https://html.themegenix.com/beeko/assets/img/icons/twitter.svg"
-                                                    class="injectable">
-                                                    <path
-                                                        d="M8.33195 5.92812L13.5437 0H12.3086L7.78334 5.14719L4.16888 0H0L5.46573 7.78356L0 14H1.23515L6.01412 8.56439L9.83112 14H14L8.33161 5.92812H8.33195ZM6.6403 7.85203L1.68014 0.909781H3.57724L12.3091 13.1316H10.4123L6.6403 7.85236V7.85203Z"
-                                                        fill="currentColor"></path>
-                                                </svg>
-                                            </a></li>
-                                        <li><a href="https://www.instagram.com/" target="_blank">
-                                                <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
-                                                    data-inject-url="https://html.themegenix.com/beeko/assets/img/icons/instagram.svg"
-                                                    class="injectable">
-                                                    <path
-                                                        d="M8.03114 12.0628C5.78292 12.0628 3.9685 10.2483 3.9685 8.00006C3.9685 5.7518 5.78292 3.93735 8.03114 3.93735C10.2794 3.93735 12.0938 5.7518 12.0938 8.00006C12.0938 10.2483 10.2794 12.0628 8.03114 12.0628ZM8.03114 5.3596C6.57722 5.3596 5.39072 6.54612 5.39072 8.00006C5.39072 9.45401 6.57722 10.6405 8.03114 10.6405C9.48505 10.6405 10.6716 9.45401 10.6716 8.00006C10.6716 6.54612 9.48505 5.3596 8.03114 5.3596ZM12.2602 13.176C11.7353 13.176 11.3114 12.7521 11.3114 12.2272C11.3114 11.7023 11.7353 11.2784 12.2602 11.2784C12.7851 11.2784 13.209 11.7003 13.209 12.2272C13.2091 12.3518 13.1847 12.4753 13.1371 12.5905C13.0894 12.7057 13.0196 12.8103 12.9314 12.8985C12.8433 12.9866 12.7386 13.0565 12.6234 13.1041C12.5083 13.1517 12.3848 13.1762 12.2602 13.176ZM15.9504 8.00006C15.9504 9.09349 15.9603 10.177 15.8989 11.2685C15.8375 12.5362 15.5483 13.6613 14.6213 14.5884C13.6923 15.5174 12.5692 15.8046 11.3015 15.866C10.208 15.9274 9.12455 15.9175 8.03312 15.9175C6.93971 15.9175 5.85621 15.9274 4.76478 15.866C3.49707 15.8046 2.37197 15.5154 1.44495 14.5884C0.515947 13.6593 0.22873 12.5362 0.167325 11.2685C0.105919 10.175 0.115824 9.09151 0.115824 8.00006C0.115824 6.90862 0.105919 5.82311 0.167325 4.73167C0.22873 3.46393 0.517928 2.33881 1.44495 1.41177C2.37395 0.482752 3.49707 0.195529 4.76478 0.134123C5.85819 0.0727168 6.94169 0.0826203 8.03312 0.0826203C9.12653 0.0826203 10.21 0.0727168 11.3015 0.134123C12.5692 0.195529 13.6943 0.484733 14.6213 1.41177C15.5503 2.34079 15.8375 3.46393 15.8989 4.73167C15.9623 5.82311 15.9504 6.90664 15.9504 8.00006ZM14.2073 3.32923C14.0627 2.96871 13.8884 2.69932 13.6091 2.422C13.3298 2.1427 13.0624 1.96839 12.7019 1.82378C11.66 1.40979 9.18595 1.50289 8.03114 1.50289C6.87633 1.50289 4.40031 1.40979 3.35841 1.8218C2.9979 1.96641 2.72851 2.14072 2.4512 2.42002C2.1719 2.69932 1.99759 2.96673 1.85299 3.32725C1.44099 4.37115 1.53408 6.84523 1.53408 8.00006C1.53408 9.1549 1.44099 11.631 1.85299 12.6729C1.99759 13.0334 2.1719 13.3028 2.4512 13.5801C2.73049 13.8574 2.9979 14.0337 3.35841 14.1783C4.40031 14.5903 6.87633 14.4972 8.03114 14.4972C9.18595 14.4972 11.662 14.5903 12.7039 14.1783C13.0644 14.0337 13.3338 13.8594 13.6111 13.5801C13.8904 13.3008 14.0647 13.0334 14.2093 12.6729C14.6213 11.631 14.5282 9.1549 14.5282 8.00006C14.5282 6.84523 14.6213 4.37115 14.2073 3.32923Z"
-                                                        fill="currentColor"></path>
-                                                </svg>
-                                            </a></li>
-                                        <li><a href="https://www.pinterest.com/" target="_blank">
-                                                <svg viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg"
-                                                    data-inject-url="https://html.themegenix.com/beeko/assets/img/icons/pinterest.svg"
-                                                    class="injectable">
-                                                    <path
-                                                        d="M7.16958 0.0820312C3.08585 0.0820312 0.951172 2.72138 0.951172 5.64351C0.951172 7.05744 1.69367 8.47138 2.90023 9.22547C3.27147 9.414 3.17866 9.22547 3.4571 8.09433C3.4571 8.00006 3.4571 7.9058 3.36429 7.81154C1.69367 5.73777 3.08585 1.68449 6.98396 1.68449C12.6455 1.68449 11.5318 9.60252 8.00489 9.60252C7.2624 9.69679 6.61271 9.13121 6.61271 8.37711V8.00006C6.98396 6.96318 7.26239 6.02056 7.35521 4.98367C7.35521 3.00416 4.47803 3.28695 4.47803 5.92629C4.47803 6.3976 4.57084 6.86892 4.75647 7.24597C4.75647 7.24597 3.82835 11.1107 3.64272 11.7706C3.4571 12.9017 3.54991 14.0329 3.73553 15.0697C3.64272 15.164 3.73553 15.164 3.73553 15.164H3.82835C4.47803 14.2214 5.0349 13.2788 5.40615 12.2419C5.49897 11.7706 5.96303 10.0738 5.96303 10.0738C6.42709 10.7337 7.26239 11.1107 8.0977 11.1107C10.9749 11.1107 13.0167 8.56564 13.0167 5.45498C13.0167 2.34433 10.418 0.0820312 7.16958 0.0820312Z"
-                                                        fill="currentColor"></path>
-                                                </svg>
-                                            </a></li>
-                                        <li><a href="https://www.youtube.com/" target="_blank">
-                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 13" fill="none"
-                                                    data-inject-url="https://html.themegenix.com/beeko/assets/img/icons/youtube.svg"
-                                                    class="injectable">
-                                                    <path
-                                                        d="M17.4809 2.16612C17.3847 1.78969 17.1962 1.44641 16.9342 1.17063C16.6722 0.894856 16.346 0.696256 15.988 0.594709C14.6705 0.222168 9.3889 0.222168 9.3889 0.222168C9.3889 0.222168 4.10735 0.222168 2.7898 0.592727C2.4317 0.693945 2.10524 0.892435 1.8432 1.16826C1.58116 1.44409 1.39277 1.78754 1.29694 2.16414C0.944458 3.55125 0.944458 6.44439 0.944458 6.44439C0.944458 6.44439 0.944458 9.33753 1.29694 10.7227C1.49108 11.4876 2.0641 12.09 2.7898 12.2941C4.10735 12.6666 9.3889 12.6666 9.3889 12.6666C9.3889 12.6666 14.6705 12.6666 15.988 12.2941C16.7156 12.09 17.2867 11.4876 17.4809 10.7227C17.8333 9.33753 17.8333 6.44439 17.8333 6.44439C17.8333 6.44439 17.8333 3.55126 17.4809 2.16612ZM7.71132 9.09973V3.78905L12.0843 6.42457L7.71132 9.09973Z"
-                                                        fill="currentColor"></path>
-                                                </svg>
-                                            </a></li>
-                                    </ul>
-                                </div>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="sidebar__widget">
+                        <div class="sidebar__contact">
+                            <h4 class="title">Transform Your Future with Expert Guidance</h4>
+                            <p>Enhance skills, connect experts, and achieve educational excellence today.</p>
+                            <a href="contact" class="tg-btn tg-btn-three">Contact With Us <img
+                                    src="assets/img/icons/right_arrow.svg" alt="" class="injectable"></a>
+                            <div class="shape">
+                                <img src="assets/img/images/sidebar_contact_shape01.svg" alt="shape" class="rotateme">
+                                <img src="assets/img/images/sidebar_contact_shape02.svg" alt="shape"
+                                    class="alltuchtopdown">
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
-                        <div class="footer__widget">
-                            <h4 class="footer__widget-title">Our Services</h4>
-                            <ul class="footer__widget-link list-wrap">
-                                <li><a href="teachers-traning">Teachers Training</a></li>
-                                <li><a href="teachers-consultancy">Teachers Consultancy</a></li>
-                                <li><a href="academic-support">Academic support for students</a></li>
-                                <li><a href="educational-development-advisory">Educational development advisory</a></li>
-    
-                            </ul>
+                    <div class="sidebar__widget">
+                        <h4 class="sidebar__widget-title">Course Brochure</h4>
+                        <div class="sidebar__brochure">
+                            <p>Empowering education through expert training, consultancy, and academic solutions.</p>
+                            <a href="#" target="_blank" download>
+                                <span class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="24" viewBox="0 0 18 24"
+                                        fill="none">
+                                        <path
+                                            d="M18 21V6.75L11.25 0H3C2.20435 0 1.44129 0.316071 0.87868 0.87868C0.31607 1.44129 0 2.20435 0 3V21C0 21.7957 0.31607 22.5587 0.87868 23.1213C1.44129 23.6839 2.20435 24 3 24H15C15.7957 24 16.5587 23.6839 17.1213 23.1213C17.6839 22.5587 18 21.7957 18 21ZM11.25 4.5C11.25 5.09674 11.4871 5.66903 11.909 6.09099C12.331 6.51295 12.9033 6.75 13.5 6.75H16.5V21C16.5 21.3978 16.342 21.7794 16.0607 22.0607C15.7794 22.342 15.3978 22.5 15 22.5H3C2.60218 22.5 2.22064 22.342 1.93934 22.0607C1.65804 21.7794 1.5 21.3978 1.5 21V3C1.5 2.60218 1.65804 2.22064 1.93934 1.93934C2.22064 1.65804 2.60218 1.5 3 1.5H11.25V4.5Z"
+                                            fill="currentColor" />
+                                        <path
+                                            d="M3.9045 21.1305C3.61214 21.0136 3.37659 20.7877 3.2475 20.5005C2.955 19.9185 3.0525 19.3365 3.3675 18.8475C3.6645 18.387 4.1565 17.9955 4.713 17.667C5.41791 17.2672 6.16303 16.9429 6.936 16.6995C7.53629 15.6204 8.06833 14.5047 8.529 13.359C8.25357 12.7332 8.03762 12.0828 7.884 11.4165C7.755 10.8165 7.7055 10.2225 7.815 9.7125C7.9275 9.1815 8.226 8.7045 8.79 8.478C9.078 8.3625 9.39 8.298 9.693 8.3625C9.84542 8.39495 9.9887 8.46091 10.1125 8.55561C10.2362 8.65031 10.3373 8.77137 10.4085 8.91C10.5405 9.156 10.5885 9.444 10.599 9.717C10.6095 9.999 10.581 10.311 10.5285 10.638C10.4025 11.403 10.1235 12.339 9.7485 13.329C10.1623 14.214 10.6543 15.0604 11.2185 15.858C11.8862 15.8053 12.5577 15.8304 13.2195 15.933C13.7655 16.032 14.3205 16.2255 14.6595 16.6305C14.8395 16.8465 14.949 17.1105 14.9595 17.4075C14.97 17.6955 14.889 17.9805 14.7525 18.252C14.6343 18.5036 14.4509 18.719 14.2215 18.876C13.9947 19.0239 13.7269 19.0964 13.4565 19.083C12.96 19.062 12.4755 18.789 12.057 18.4575C11.5481 18.0367 11.0896 17.5586 10.6905 17.0325C9.67613 17.1476 8.6738 17.3514 7.695 17.6415C7.24677 18.4364 6.73511 19.1939 6.165 19.9065C5.727 20.4315 5.2515 20.8905 4.7745 21.087C4.50043 21.211 4.18957 21.2265 3.9045 21.1305ZM5.973 18.279C5.724 18.393 5.493 18.513 5.2845 18.636C4.7925 18.927 4.473 19.2105 4.314 19.4565C4.173 19.674 4.17 19.8315 4.254 19.998C4.269 20.031 4.284 20.052 4.293 20.064C4.3109 20.0592 4.32844 20.0532 4.3455 20.046C4.551 19.962 4.878 19.6935 5.298 19.188C5.53687 18.8955 5.76211 18.5922 5.973 18.279ZM8.433 16.284C8.93389 16.1671 9.4393 16.0705 9.948 15.9945C9.67488 15.5765 9.41965 15.1471 9.183 14.7075C8.94773 15.2394 8.69763 15.7646 8.433 16.2825V16.284ZM12.102 16.959C12.327 17.2035 12.546 17.409 12.7545 17.574C13.1145 17.859 13.365 17.9535 13.5015 17.958C13.538 17.9628 13.5751 17.9548 13.6065 17.9355C13.6689 17.8862 13.7175 17.8216 13.7475 17.748C13.8008 17.6566 13.8312 17.5537 13.836 17.448C13.8351 17.4128 13.8212 17.3791 13.797 17.3535C13.719 17.2605 13.497 17.1255 13.02 17.04C12.7166 16.9893 12.4096 16.9627 12.102 16.9605V16.959ZM9.117 11.7C9.24324 11.2928 9.34344 10.8779 9.417 10.458C9.4635 10.176 9.4815 9.9435 9.474 9.7605C9.47441 9.65954 9.4582 9.55919 9.426 9.4635C9.35096 9.47279 9.27769 9.493 9.2085 9.5235C9.078 9.576 8.9715 9.6825 8.9145 9.948C8.8545 10.236 8.8695 10.6515 8.9835 11.181C9.0195 11.3475 9.0645 11.5215 9.1185 11.7H9.117Z"
+                                            fill="currentColor" />
+                                    </svg>
+                                </span>
+                                <span class="content">
+                                    <strong>PDF. Download</strong>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23"
+                                        fill="none">
+                                        <path
+                                            d="M7.5 11.5L11.5 15.5M11.5 15.5L15.5 11.5M11.5 15.5V7.5M21.5 11.5C21.5 17.0228 17.0228 21.5 11.5 21.5C5.97715 21.5 1.5 17.0228 1.5 11.5C1.5 5.97715 5.97715 1.5 11.5 1.5C17.0228 1.5 21.5 5.97715 21.5 11.5Z"
+                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </span>
+                            </a>
+
                         </div>
                     </div>
-                    <div class="col-xl-2 col-lg-4 col-md-6 col-sm-6">
-                        <div class="footer__widget">
-                            <h4 class="footer__widget-title">Quick links</h4>
-                            <ul class="footer__widget-link list-wrap">
-                                <li><a href="home">Home</a></li>
-                                <li><a href="about">About</a></li>
-                                <li><a href="contact">Contact</a></li>
-                                <li><a href="#">Privacy Policy</a></li>
-                                <li><a href="#">Terms &amp; Conditions</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6">
-                        <div class="footer__widget">
-                            <h4 class="footer__widget-title">Contact</h4>
-                            <div class="footer__contact-two">
-                                <p>H No 5-152, 1st Floor,
-                                    Road no.2,<br /> Mytrinagar Phase II, Madeenaguda,<br />
-                                    Hyderabad- 500049</p>
+                </aside>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- course-details-area-end -->
+
+</main>
+<!-- main-area-end -->
+
+<!-- footer-area -->
+<footer class="footer__area-three fix">
+    <div class="container">
+        <div class="footer__top-two footer__top-three">
+            <div class="row">
+                <div class="col-xl-3 col-lg-4 col-md-6">
+                    <div class="footer__widget">
+                        <h4 class="footer__widget-title">About Company</h4>
+                        <div class="footer__content-two">
+                            <p>Enhancing teacher skills and student success through expert training, consultancy, and
+                                academic support.</p>
+                            <div class="footer__social footer__social-three">
+                                <span class="title">Follow us On:</span>
                                 <ul class="list-wrap">
-                                    <li><i class="flaticon-envelope"></i><a
-                                            href="mailto:info@kalameducationalconsultancy.com">info@kalameducationalconsultancy.com</a>
-                                    </li>
-                                    <li><i class="flaticon-telephone"></i><a href="tel:+917815899695">+91 7815899695 </a>
-                                    </li>
+                                    <li><a href="https://www.facebook.com/" target="_blank"><svg viewBox="0 0 7 14"
+                                                fill="none" xmlns="http://www.w3.org/2000/svg"
+                                                data-inject-url="https://html.themegenix.com/beeko/assets/img/icons/facebook.svg"
+                                                class="injectable">
+                                                <path
+                                                    d="M2.00911 13.6558H4.40208V7.46277H6.40303L6.70521 5.05342H4.40208V3.50941C4.40208 2.81375 4.58993 2.33867 5.55365 2.33867H6.78689V0.175351C6.57454 0.1499 5.84766 0.0820312 4.99828 0.0820312C3.21785 0.0820312 2.00911 1.21035 2.00911 3.27187V5.05342H0V7.46277H2.00911V13.6558Z"
+                                                    fill="currentColor"></path>
+                                            </svg></a></li>
+                                    <li><a href="https://x.com/home" target="_blank">
+                                            <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                                data-inject-url="https://html.themegenix.com/beeko/assets/img/icons/twitter.svg"
+                                                class="injectable">
+                                                <path
+                                                    d="M8.33195 5.92812L13.5437 0H12.3086L7.78334 5.14719L4.16888 0H0L5.46573 7.78356L0 14H1.23515L6.01412 8.56439L9.83112 14H14L8.33161 5.92812H8.33195ZM6.6403 7.85203L1.68014 0.909781H3.57724L12.3091 13.1316H10.4123L6.6403 7.85236V7.85203Z"
+                                                    fill="currentColor"></path>
+                                            </svg>
+                                        </a></li>
+                                    <li><a href="https://www.instagram.com/" target="_blank">
+                                            <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                                data-inject-url="https://html.themegenix.com/beeko/assets/img/icons/instagram.svg"
+                                                class="injectable">
+                                                <path
+                                                    d="M8.03114 12.0628C5.78292 12.0628 3.9685 10.2483 3.9685 8.00006C3.9685 5.7518 5.78292 3.93735 8.03114 3.93735C10.2794 3.93735 12.0938 5.7518 12.0938 8.00006C12.0938 10.2483 10.2794 12.0628 8.03114 12.0628ZM8.03114 5.3596C6.57722 5.3596 5.39072 6.54612 5.39072 8.00006C5.39072 9.45401 6.57722 10.6405 8.03114 10.6405C9.48505 10.6405 10.6716 9.45401 10.6716 8.00006C10.6716 6.54612 9.48505 5.3596 8.03114 5.3596ZM12.2602 13.176C11.7353 13.176 11.3114 12.7521 11.3114 12.2272C11.3114 11.7023 11.7353 11.2784 12.2602 11.2784C12.7851 11.2784 13.209 11.7003 13.209 12.2272C13.2091 12.3518 13.1847 12.4753 13.1371 12.5905C13.0894 12.7057 13.0196 12.8103 12.9314 12.8985C12.8433 12.9866 12.7386 13.0565 12.6234 13.1041C12.5083 13.1517 12.3848 13.1762 12.2602 13.176ZM15.9504 8.00006C15.9504 9.09349 15.9603 10.177 15.8989 11.2685C15.8375 12.5362 15.5483 13.6613 14.6213 14.5884C13.6923 15.5174 12.5692 15.8046 11.3015 15.866C10.208 15.9274 9.12455 15.9175 8.03312 15.9175C6.93971 15.9175 5.85621 15.9274 4.76478 15.866C3.49707 15.8046 2.37197 15.5154 1.44495 14.5884C0.515947 13.6593 0.22873 12.5362 0.167325 11.2685C0.105919 10.175 0.115824 9.09151 0.115824 8.00006C0.115824 6.90862 0.105919 5.82311 0.167325 4.73167C0.22873 3.46393 0.517928 2.33881 1.44495 1.41177C2.37395 0.482752 3.49707 0.195529 4.76478 0.134123C5.85819 0.0727168 6.94169 0.0826203 8.03312 0.0826203C9.12653 0.0826203 10.21 0.0727168 11.3015 0.134123C12.5692 0.195529 13.6943 0.484733 14.6213 1.41177C15.5503 2.34079 15.8375 3.46393 15.8989 4.73167C15.9623 5.82311 15.9504 6.90664 15.9504 8.00006ZM14.2073 3.32923C14.0627 2.96871 13.8884 2.69932 13.6091 2.422C13.3298 2.1427 13.0624 1.96839 12.7019 1.82378C11.66 1.40979 9.18595 1.50289 8.03114 1.50289C6.87633 1.50289 4.40031 1.40979 3.35841 1.8218C2.9979 1.96641 2.72851 2.14072 2.4512 2.42002C2.1719 2.69932 1.99759 2.96673 1.85299 3.32725C1.44099 4.37115 1.53408 6.84523 1.53408 8.00006C1.53408 9.1549 1.44099 11.631 1.85299 12.6729C1.99759 13.0334 2.1719 13.3028 2.4512 13.5801C2.73049 13.8574 2.9979 14.0337 3.35841 14.1783C4.40031 14.5903 6.87633 14.4972 8.03114 14.4972C9.18595 14.4972 11.662 14.5903 12.7039 14.1783C13.0644 14.0337 13.3338 13.8594 13.6111 13.5801C13.8904 13.3008 14.0647 13.0334 14.2093 12.6729C14.6213 11.631 14.5282 9.1549 14.5282 8.00006C14.5282 6.84523 14.6213 4.37115 14.2073 3.32923Z"
+                                                    fill="currentColor"></path>
+                                            </svg>
+                                        </a></li>
+                                    <li><a href="https://www.pinterest.com/" target="_blank">
+                                            <svg viewBox="0 0 14 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+                                                data-inject-url="https://html.themegenix.com/beeko/assets/img/icons/pinterest.svg"
+                                                class="injectable">
+                                                <path
+                                                    d="M7.16958 0.0820312C3.08585 0.0820312 0.951172 2.72138 0.951172 5.64351C0.951172 7.05744 1.69367 8.47138 2.90023 9.22547C3.27147 9.414 3.17866 9.22547 3.4571 8.09433C3.4571 8.00006 3.4571 7.9058 3.36429 7.81154C1.69367 5.73777 3.08585 1.68449 6.98396 1.68449C12.6455 1.68449 11.5318 9.60252 8.00489 9.60252C7.2624 9.69679 6.61271 9.13121 6.61271 8.37711V8.00006C6.98396 6.96318 7.26239 6.02056 7.35521 4.98367C7.35521 3.00416 4.47803 3.28695 4.47803 5.92629C4.47803 6.3976 4.57084 6.86892 4.75647 7.24597C4.75647 7.24597 3.82835 11.1107 3.64272 11.7706C3.4571 12.9017 3.54991 14.0329 3.73553 15.0697C3.64272 15.164 3.73553 15.164 3.73553 15.164H3.82835C4.47803 14.2214 5.0349 13.2788 5.40615 12.2419C5.49897 11.7706 5.96303 10.0738 5.96303 10.0738C6.42709 10.7337 7.26239 11.1107 8.0977 11.1107C10.9749 11.1107 13.0167 8.56564 13.0167 5.45498C13.0167 2.34433 10.418 0.0820312 7.16958 0.0820312Z"
+                                                    fill="currentColor"></path>
+                                            </svg>
+                                        </a></li>
+                                    <li><a href="https://www.youtube.com/" target="_blank">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 13" fill="none"
+                                                data-inject-url="https://html.themegenix.com/beeko/assets/img/icons/youtube.svg"
+                                                class="injectable">
+                                                <path
+                                                    d="M17.4809 2.16612C17.3847 1.78969 17.1962 1.44641 16.9342 1.17063C16.6722 0.894856 16.346 0.696256 15.988 0.594709C14.6705 0.222168 9.3889 0.222168 9.3889 0.222168C9.3889 0.222168 4.10735 0.222168 2.7898 0.592727C2.4317 0.693945 2.10524 0.892435 1.8432 1.16826C1.58116 1.44409 1.39277 1.78754 1.29694 2.16414C0.944458 3.55125 0.944458 6.44439 0.944458 6.44439C0.944458 6.44439 0.944458 9.33753 1.29694 10.7227C1.49108 11.4876 2.0641 12.09 2.7898 12.2941C4.10735 12.6666 9.3889 12.6666 9.3889 12.6666C9.3889 12.6666 14.6705 12.6666 15.988 12.2941C16.7156 12.09 17.2867 11.4876 17.4809 10.7227C17.8333 9.33753 17.8333 6.44439 17.8333 6.44439C17.8333 6.44439 17.8333 3.55126 17.4809 2.16612ZM7.71132 9.09973V3.78905L12.0843 6.42457L7.71132 9.09973Z"
+                                                    fill="currentColor"></path>
+                                            </svg>
+                                        </a></li>
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="footer__bottom-three">
-                <div class="row align-items-center">
-                    <div class="col-md-6">
-                        <div class="footer__bottom-logo">
-                            <a href="index"><img src="assets/img/logo.png" alt="logo"></a>
-                        </div>
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6">
+                    <div class="footer__widget">
+                        <h4 class="footer__widget-title">Our Services</h4>
+                        <ul class="footer__widget-link list-wrap">
+                            <li><a href="teachers-traning">Teachers Training</a></li>
+                            <li><a href="teachers-consultancy">Teachers Consultancy</a></li>
+                            <li><a href="academic-support">Academic support for students</a></li>
+                            <li><a href="educational-development-advisory">Educational development advisory</a></li>
+
+                        </ul>
                     </div>
-                    <div class="col-md-6">
-                        <div class="copyright__content-three">
-                            <p>Copyright ©2025 Kalam Educational Consultancy | All Rights Reserved</p>
+                </div>
+                <div class="col-xl-2 col-lg-4 col-md-6 col-sm-6">
+                    <div class="footer__widget">
+                        <h4 class="footer__widget-title">Quick links</h4>
+                        <ul class="footer__widget-link list-wrap">
+                            <li><a href="home">Home</a></li>
+                            <li><a href="about">About</a></li>
+                            <li><a href="contact">Contact</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms &amp; Conditions</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6">
+                    <div class="footer__widget">
+                        <h4 class="footer__widget-title">Contact</h4>
+                        <div class="footer__contact-two">
+                            <p>H No 5-152, 1st Floor,
+                                Road no.2,<br /> Mytrinagar Phase II, Madeenaguda,<br />
+                                Hyderabad- 500049</p>
+                            <ul class="list-wrap">
+                                <li><i class="flaticon-envelope"></i><a
+                                        href="mailto:info@kalameducationalconsultancy.com">info@kalameducationalconsultancy.com</a>
+                                </li>
+                                <li><i class="flaticon-telephone"></i><a href="tel:+917815899695">+91 7815899695 </a>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </footer>
-    <!-- footer-area-end -->
-    
-    <!-- JS here -->
-    <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-    <script src="assets/js/jquery.magnific-popup.min.js"></script>
-    <script src="assets/js/jquery.odometer.min.js"></script>
-    <script src="assets/js/jquery.appear.js"></script>
-    <script src="assets/js/swiper-bundle.min.js"></script>
-    <script src="assets/js/jquery.parallaxScroll.min.js"></script>
-    <script src="assets/js/jquery.marquee.min.js"></script>
-    <!-- <script src="assets/js/tg-cursor.min.js"></script> -->
-    <script src="assets/js/ajax-form.js"></script>
-    <script src="assets/js/svg-inject.min.js"></script>
-    <script src="assets/js/wow.min.js"></script>
-    <script src="assets/js/aos.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script>
-        SVGInject(document.querySelectorAll("img.injectable"));
-    </script>
-    </body>
-    
-    </html>
+        <div class="footer__bottom-three">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <div class="footer__bottom-logo">
+                        <a href="index"><img src="assets/img/logo.png" alt="logo"></a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="copyright__content-three">
+                        <p>Copyright ©2025 Kalam Educational Consultancy | All Rights Reserved</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- footer-area-end -->
+
+<!-- JS here -->
+<script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/jquery.magnific-popup.min.js"></script>
+<script src="assets/js/jquery.odometer.min.js"></script>
+<script src="assets/js/jquery.appear.js"></script>
+<script src="assets/js/swiper-bundle.min.js"></script>
+<script src="assets/js/jquery.parallaxScroll.min.js"></script>
+<script src="assets/js/jquery.marquee.min.js"></script>
+<!-- <script src="assets/js/tg-cursor.min.js"></script> -->
+<script src="assets/js/ajax-form.js"></script>
+<script src="assets/js/svg-inject.min.js"></script>
+<script src="assets/js/wow.min.js"></script>
+<script src="assets/js/aos.js"></script>
+<script src="assets/js/main.js"></script>
+<script>
+    SVGInject(document.querySelectorAll("img.injectable"));
+</script>
+</body>
+
+</html>

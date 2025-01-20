@@ -7284,7 +7284,8 @@ textarea {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  align-items: center;
+  align-items: start;
+  flex-direction: column;
   gap: 25px;
 }
 @media (max-width: 767.98px) {
@@ -7417,11 +7418,11 @@ textarea {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  align-items: center;
-  gap: 9px;
-  font-size: 17px;
-  font-weight: 500;
-  line-height: 1.5;
+  align-items: start;
+  gap: 20px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.8;
   margin-bottom: 19px;
 }
 .about__list-item-two li:last-child {
@@ -7445,6 +7446,10 @@ textarea {
   background: var(--tg-theme-primary);
   color: var(--tg-color-white-default);
   flex: 0 0 auto;
+  margin-top: 7px;
+}
+.project__details-report ul {
+  list-style: none;
 }
 .about__list-item-three {
   display: -webkit-box;
@@ -13728,13 +13733,18 @@ textarea {
     font-size: 30px;
   }
 }
-.project__details-content > p {
-  margin-bottom: 0;
-}
 .project__details-content .title-two {
   margin-bottom: 15px;
   font-weight: 600;
   font-size: 30px;
+}
+li.address{
+  display: flex;
+  gap: 5px;
+}
+li.address svg{
+  flex-shrink: 0;
+  margin-top: 5px;
 }
 .project__details-challenge {
   margin-top: 40px;
@@ -20219,7 +20229,7 @@ blockquote cite {
 }
 .contact__info-item .title {
   font-size: 24px;
-  margin-bottom: 6px;
+  margin-bottom: 15px;
 }
 .contact__info-item p {
   margin-bottom: 10px;
@@ -20227,7 +20237,7 @@ blockquote cite {
   font-weight: 500;
 }
 .contact__info-item .list-wrap li {
-  margin-bottom: 3px;
+  margin-bottom: 15px;
 }
 .contact__info-item .list-wrap li:last-child {
   margin-bottom: 0;
@@ -20235,27 +20245,13 @@ blockquote cite {
 .contact__info-item .list-wrap li a {
   color: var(--tg-body-color);
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1.4;
   position: relative;
   display: flex;
   align-items: center;
   gap: 14px;
   margin-bottom: 10px;
-}
-.contact__info-item .list-wrap li a::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0%;
-  height: 1px;
-  background: var(--tg-theme-primary);
-  -webkit-transition: all 0.4s ease-out 0s;
-  -moz-transition: all 0.4s ease-out 0s;
-  -ms-transition: all 0.4s ease-out 0s;
-  -o-transition: all 0.4s ease-out 0s;
-  transition: all 0.4s ease-out 0s;
 }
 .contact__info-item .list-wrap li a:hover {
   color: var(--tg-theme-primary);

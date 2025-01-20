@@ -8,19 +8,35 @@ if (file_exists($metadataFile)) {
 // Get the current file name without extension
 $current_page = pathinfo(basename($_SERVER['PHP_SELF']), PATHINFO_FILENAME);
 // Fetch meta tags from JSON based on the current file name
-$metaTitle = $metadata['metaTags'][$current_page]['title'] ?? "Yava Tech - Leading IT Solutions Provider";
-$metaDescription = $metadata['metaTags'][$current_page]['description'] ?? "Yava Tech delivers global IT solutions with integrity, quality, and responsiveness.";
+$metaTitle = $metadata['metaTags'][$current_page]['title'] ?? "Kalam Educational Consultancy - Expert Teacher Training & Academic Support";
+$metaDescription = $metadata['metaTags'][$current_page]['description'] ?? "Kalam Educational Consultancy provides comprehensive teacher training, student academic support, and educational development services. Transform your educational journey with expert guidance.";
+$ogURL = $metadata['metaTags'][$current_page]['url'] ?? "https://kalameducationalconsultancy.com/";
+
 ?>
 <!doctype html>
 <html class="no-js" lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
     <title><?php echo htmlspecialchars($metaTitle); ?></title>
     <meta name="description" content="<?php echo htmlspecialchars($metaDescription); ?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+    <meta property="og:site_name" content="kalameducationalconsultancy.com" />
+    <meta property="og:logo" content="assets/img/logo.png" size="180x180" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="<?php echo htmlspecialchars(string: $ogURL);?>" />
+    <meta property="og:title" content="<?php echo htmlspecialchars(string: $metaTitle); ?>" />
+    <meta property="og:description" content="<?php echo htmlspecialchars($metaDescription); ?>" />
+    <meta property="og:image" content="assets/img/logo.png?width=350&amp;format=auto" />
+    <meta property="og:image:width" content="750" />
+    <meta property="og:image:height" content="350" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="https://twitter.com/" />
+    <meta name="twitter:title" content="<?php echo htmlspecialchars($metaTitle); ?>" />
+    <meta name="twitter:description" content="<?php echo htmlspecialchars($metaDescription); ?>" />
+    <meta name="twitter:image" content="assets/img/logo.png?width=350&amp;format=auto" />
     <!-- Place favicon.ico in the root directory -->
 
     <!-- CSS here -->
@@ -71,28 +87,48 @@ $metaDescription = $metadata['metaTags'][$current_page]['description'] ?? "Yava 
                                 </div>
                                 <div class="tgmenu__navbar-wrap tgmenu__main-menu d-none d-lg-flex">
                                     <ul class="navigation">
-                                        <li class="<?php echo ($current_page == 'index') ? 'active' : ''; ?>"><a href="index.html">Home</a>
-                                            
+                                        <li class="<?php echo ($current_page == 'index') ? 'active' : ''; ?>"><a
+                                                href="index">Home</a>
+
                                         </li>
-                                        <li class=" <?php echo ($current_page == 'about') ? 'active' : ''; ?>"><a href="about.html">About Us</a>
-                                            
+                                        <li class=" <?php echo ($current_page == 'about') ? 'active' : ''; ?>"><a
+                                                href="about">About Us</a>
+
                                         </li>
-                                        <li class="menu-item-has-children  <?php echo ($current_page == 'teachers-traning' ||  $current_page == 'teachers-consultancy' || $current_page == 'academic-support' || $current_page == 'educational-development-advisory' ) ? 'active' : ''; ?>"><a href="#">Our Courses</a>
+                                        <li
+                                            class="menu-item-has-children  <?php echo ($current_page == 'teachers-traning' || $current_page == 'teachers-consultancy' || $current_page == 'academic-support' || $current_page == 'educational-development-advisory') ? 'active' : ''; ?>">
+                                            <a href="#">Our Services</a>
                                             <ul class="sub-menu">
-                                                <li class=" <?php echo ($current_page == 'teachers-traning') ? 'active' : ''; ?>"><a href="teachers-traning.html">Teachers Training</a></li>
-                                                <li class=" <?php echo ($current_page == 'teachers-consultancy') ? 'active' : ''; ?>"><a href="teachers-consultancy.html">Teachers Consultancy</a></li>
-                                                <li class=" <?php echo ($current_page == 'academic-support') ? 'active' : ''; ?>"><a href="academic-support.html">Academic support for students</a></li>
-                                                <li class=" <?php echo ($current_page == 'educational-development-advisory') ? 'active' : ''; ?>"><a href="educational-development-advisory.html">Educational development advisory</a></li>
+                                                <li
+                                                    class=" <?php echo ($current_page == 'teachers-traning') ? 'active' : ''; ?>">
+                                                    <a href="teachers-traning">Teachers Training Programs</a>
+                                                </li>
+                                                <li
+                                                    class=" <?php echo ($current_page == 'teachers-consultancy') ? 'active' : ''; ?>">
+                                                    <a href="teachers-consultancy">Teacher Consultancy</a>
+                                                </li>
+                                                <li
+                                                    class=" <?php echo ($current_page == 'academic-support') ? 'active' : ''; ?>">
+                                                    <a href="academic-support">Academic support for students</a>
+                                                </li>
+                                                <li
+                                                    class=" <?php echo ($current_page == 'educational-development-advisory') ? 'active' : ''; ?>">
+                                                    <a href="educational-development-advisory">Educational development
+                                                        advisory</a>
+                                                </li>
                                             </ul>
                                         </li>
-                                        
-                                        <li class=" <?php echo ($current_page == 'contact') ? 'active' : ''; ?>"><a href="contact.html">Contact</a></li>
+
+                                        <li class=" <?php echo ($current_page == 'contact') ? 'active' : ''; ?>"><a
+                                                href="contact">Contact</a></li>
                                     </ul>
                                 </div>
                                 <div class="tgmenu__action tgmenu__action-three">
                                     <ul class="list-wrap">
                                         <li class="header-contact">
-                                            <a href="tel:+917815899695" class="header-contact-info"><i class="flaticon-telephone"></i>+91 78158 99695                                            </a>
+                                            <a href="tel:+91 9666999392" class="header-contact-info"><i
+                                                    class="flaticon-telephone"></i>+91 96669 99392
+                                            </a>
                                         </li>
                                         <li class="header-btn header-btn-two">
                                             <a href="contact" class="tg-btn">Get a quote</a>
@@ -115,7 +151,7 @@ $metaDescription = $metadata['metaTags'][$current_page]['description'] ?? "Yava 
                 <div class="nav-logo">
                     <a href="index"><img src="assets/img/logo.png" alt="Logo"></a>
                 </div>
-                
+
                 <div class="tgmobile__menu-outer">
                     <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
                 </div>
@@ -137,9 +173,10 @@ $metaDescription = $metadata['metaTags'][$current_page]['description'] ?? "Yava 
     <!-- header-area-end -->
 
 
+
     <!-- main-area -->
     <main class="main-area fix">
-<style>
+        <style>
     .transparent-header {
         position: relative;
         background-color: #fff;
@@ -182,88 +219,53 @@ $metaDescription = $metadata['metaTags'][$current_page]['description'] ?? "Yava 
                         <img src="assets/img/academic-support.jpg" alt="Academic Support Services">
                     </div>
                     <div class="project__details-content">
-                        <h2 class="title">Comprehensive Academic Support for Student Success</h2>
+                        <h2 class="title">Student support for academic success and behavioural challenges</h2>
                         <p>
-                            Unlock your full academic potential with our comprehensive student support services. We
-                            provide personalized learning solutions designed to help students excel in their academic
-                            journey. Our expert tutors and mentors work closely with each student to develop strong
-                            study skills, boost confidence, and achieve academic excellence.
+                            We provide individualized academic support to the students.
                         </p>
-                        <div class="project__details-challenge">
-                            <h2 class="title-two">Personalized Learning Support</h2>
-                            <p>
-                                Every student has unique learning needs and goals. Our tailored academic support
-                                programs address individual challenges while building on existing strengths. Through
-                                one-on-one attention and structured guidance, we help students develop effective
-                                learning strategies and academic confidence.
-                            </p>
-                            <h2 class="title-two">Our Support Services Include</h2>
-                            <ul class="list-wrap about__list-item-two">
-                                <li>
-                                    <div class="icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="11"
-                                            viewBox="0 0 14 11" fill="none">
-                                            <path d="M12.091 2L5.091 9L1.90918 5.81818" stroke="currentColor"
-                                                stroke-width="2.1875" stroke-linecap="round" stroke-linejoin="round" />
-                                        </svg>
-                                    </div>
-                                    Individual Tutoring: Expert guidance in specific subjects and topics to enhance
-                                    understanding and performance.
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="11"
-                                            viewBox="0 0 14 11" fill="none">
-                                            <path d="M12.091 2L5.091 9L1.90918 5.81818" stroke="currentColor"
-                                                stroke-width="2.1875" stroke-linecap="round" stroke-linejoin="round" />
-                                        </svg>
-                                    </div>
-                                    Study Skills Development: Learn effective time management, note-taking, and exam
-                                    preparation strategies.
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="11"
-                                            viewBox="0 0 14 11" fill="none">
-                                            <path d="M12.091 2L5.091 9L1.90918 5.81818" stroke="currentColor"
-                                                stroke-width="2.1875" stroke-linecap="round" stroke-linejoin="round" />
-                                        </svg>
-                                    </div>
-                                    Academic Mentoring: Personalized guidance for academic planning and goal
-                                    achievement.
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="11"
-                                            viewBox="0 0 14 11" fill="none">
-                                            <path d="M12.091 2L5.091 9L1.90918 5.81818" stroke="currentColor"
-                                                stroke-width="2.1875" stroke-linecap="round" stroke-linejoin="round" />
-                                        </svg>
-                                    </div>
-                                    Homework Support: Structured assistance with assignments and projects across all
-                                    subjects.
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="project__details-challenge">
-                            <h2 class="title-two">Our Learning Approach</h2>
-                            <p>
-                                <strong>Diagnostic Assessment:</strong> We begin with a comprehensive evaluation to
-                                identify strengths and areas for improvement. This allows us to create targeted learning
-                                plans that address specific needs.<br>
-                                <strong>Customized Learning Plans:</strong> Develop personalized strategies and goals
-                                based on individual learning styles and academic requirements.<br>
-                                <strong>Regular Progress Monitoring:</strong> Track advancement through regular
-                                assessments and adjust support strategies as needed.
-                            </p>
-                            <h2 class="title-two">Special Programs</h2>
-                            <ul class="list-wrap about__list-item-two">
-                                <li>Advanced Placement (AP) and IB Support</li>
-                                <li>College Entrance Exam Preparation</li>
-                                <li>ESL/Language Support Services</li>
-                                <li>Learning Disability Support and Accommodations</li>
-                            </ul>
-                        </div>
+                        <p>21st Century kids are full of energy, good knowledge and are ahead in thinking,
+                            understanding, and empathizing compared to adults. However their energy should be
+                            channelized in the right direction, they need guidance to apply their knowledge and create
+                            situations/contexts to place themselves in choosing right path.</p>
+                        <p>Students’ Academic Success is the aim of our organization. These days students need
+                            individualized support/guidance to excel in academics. Sometimes due to many distractions,
+                            kids may lose focus during classroom interaction and may struggle with conceptual gaps.
+                            These gaps may result in their poor performance and end up with pressure at home front and
+                            school front. </p>
+                        <p>Here we play a significant role in getting them to stay connected with concepts, build upon
+                            confidence in the subject and as an individual. Our expert’s interaction with kids may show
+                            the results in the given six months. </p>
+                        <p><strong>The support we extend.</strong></p>
+                        <ul>
+                            <li>Academic support based on day-to-day school/class activities.</li>
+                            <li>Identify learning difficulties.</li>
+                            <li>Fill in the conceptual gaps.</li>
+                            <li>Help them to organize their daily routine.</li>
+                            <li>Time management</li>
+                            <li>Personality Development</li>
+                            <li>Skill Enhancement based on their needs.</li>
+                            <li>Prepare for basic creative writing skills and interpretation skills. </li>
+                            <li>Presentation skills</li>
+                            <br />
+                            <p style="margin-left:-15px"><strong>Choose the study hour pattern.</strong></p>
+                            <li>One hour daily</li>
+                            <li>Three to four hours in a week</li>
+                        </ul>
+
+                        <p>Kindly fill in the details as per your child’s needs and our expert will call you back for
+                            further follow-up.</p>
+
+                        <ul>
+                            <li>Student Name</li>
+                            <li>Class/Grade</li>
+                            <li>Parent/Guardian Name</li>
+                            <li>Contact details. </li>
+                            <li>phone number and email id. </li>
+                            <li>Subject – support needed</li>
+                            <li>Any other area to be focused on </li>
+                            <li>Study hour pattern to choose</li>
+
+                        </ul>
                     </div>
                 </div>
             </div>

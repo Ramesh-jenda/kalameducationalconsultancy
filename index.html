@@ -8,19 +8,35 @@ if (file_exists($metadataFile)) {
 // Get the current file name without extension
 $current_page = pathinfo(basename($_SERVER['PHP_SELF']), PATHINFO_FILENAME);
 // Fetch meta tags from JSON based on the current file name
-$metaTitle = $metadata['metaTags'][$current_page]['title'] ?? "Yava Tech - Leading IT Solutions Provider";
-$metaDescription = $metadata['metaTags'][$current_page]['description'] ?? "Yava Tech delivers global IT solutions with integrity, quality, and responsiveness.";
+$metaTitle = $metadata['metaTags'][$current_page]['title'] ?? "Kalam Educational Consultancy - Expert Teacher Training & Academic Support";
+$metaDescription = $metadata['metaTags'][$current_page]['description'] ?? "Kalam Educational Consultancy provides comprehensive teacher training, student academic support, and educational development services. Transform your educational journey with expert guidance.";
+$ogURL = $metadata['metaTags'][$current_page]['url'] ?? "https://kalameducationalconsultancy.com/";
+
 ?>
 <!doctype html>
 <html class="no-js" lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
     <title><?php echo htmlspecialchars($metaTitle); ?></title>
     <meta name="description" content="<?php echo htmlspecialchars($metaDescription); ?>">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+    <meta property="og:site_name" content="kalameducationalconsultancy.com" />
+    <meta property="og:logo" content="assets/img/logo.png" size="180x180" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="<?php echo htmlspecialchars(string: $ogURL);?>" />
+    <meta property="og:title" content="<?php echo htmlspecialchars(string: $metaTitle); ?>" />
+    <meta property="og:description" content="<?php echo htmlspecialchars($metaDescription); ?>" />
+    <meta property="og:image" content="assets/img/logo.png?width=350&amp;format=auto" />
+    <meta property="og:image:width" content="750" />
+    <meta property="og:image:height" content="350" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="https://twitter.com/" />
+    <meta name="twitter:title" content="<?php echo htmlspecialchars($metaTitle); ?>" />
+    <meta name="twitter:description" content="<?php echo htmlspecialchars($metaDescription); ?>" />
+    <meta name="twitter:image" content="assets/img/logo.png?width=350&amp;format=auto" />
     <!-- Place favicon.ico in the root directory -->
 
     <!-- CSS here -->
@@ -71,28 +87,48 @@ $metaDescription = $metadata['metaTags'][$current_page]['description'] ?? "Yava 
                                 </div>
                                 <div class="tgmenu__navbar-wrap tgmenu__main-menu d-none d-lg-flex">
                                     <ul class="navigation">
-                                        <li class="<?php echo ($current_page == 'index') ? 'active' : ''; ?>"><a href="index.html">Home</a>
-                                            
+                                        <li class="<?php echo ($current_page == 'index') ? 'active' : ''; ?>"><a
+                                                href="index">Home</a>
+
                                         </li>
-                                        <li class=" <?php echo ($current_page == 'about') ? 'active' : ''; ?>"><a href="about.html">About Us</a>
-                                            
+                                        <li class=" <?php echo ($current_page == 'about') ? 'active' : ''; ?>"><a
+                                                href="about">About Us</a>
+
                                         </li>
-                                        <li class="menu-item-has-children  <?php echo ($current_page == 'teachers-traning' ||  $current_page == 'teachers-consultancy' || $current_page == 'academic-support' || $current_page == 'educational-development-advisory' ) ? 'active' : ''; ?>"><a href="#">Our Courses</a>
+                                        <li
+                                            class="menu-item-has-children  <?php echo ($current_page == 'teachers-traning' || $current_page == 'teachers-consultancy' || $current_page == 'academic-support' || $current_page == 'educational-development-advisory') ? 'active' : ''; ?>">
+                                            <a href="#">Our Services</a>
                                             <ul class="sub-menu">
-                                                <li class=" <?php echo ($current_page == 'teachers-traning') ? 'active' : ''; ?>"><a href="teachers-traning.html">Teachers Training</a></li>
-                                                <li class=" <?php echo ($current_page == 'teachers-consultancy') ? 'active' : ''; ?>"><a href="teachers-consultancy.html">Teachers Consultancy</a></li>
-                                                <li class=" <?php echo ($current_page == 'academic-support') ? 'active' : ''; ?>"><a href="academic-support.html">Academic support for students</a></li>
-                                                <li class=" <?php echo ($current_page == 'educational-development-advisory') ? 'active' : ''; ?>"><a href="educational-development-advisory.html">Educational development advisory</a></li>
+                                                <li
+                                                    class=" <?php echo ($current_page == 'teachers-traning') ? 'active' : ''; ?>">
+                                                    <a href="teachers-traning">Teachers Training Programs</a>
+                                                </li>
+                                                <li
+                                                    class=" <?php echo ($current_page == 'teachers-consultancy') ? 'active' : ''; ?>">
+                                                    <a href="teachers-consultancy">Teacher Consultancy</a>
+                                                </li>
+                                                <li
+                                                    class=" <?php echo ($current_page == 'academic-support') ? 'active' : ''; ?>">
+                                                    <a href="academic-support">Academic support for students</a>
+                                                </li>
+                                                <li
+                                                    class=" <?php echo ($current_page == 'educational-development-advisory') ? 'active' : ''; ?>">
+                                                    <a href="educational-development-advisory">Educational development
+                                                        advisory</a>
+                                                </li>
                                             </ul>
                                         </li>
-                                        
-                                        <li class=" <?php echo ($current_page == 'contact') ? 'active' : ''; ?>"><a href="contact.html">Contact</a></li>
+
+                                        <li class=" <?php echo ($current_page == 'contact') ? 'active' : ''; ?>"><a
+                                                href="contact">Contact</a></li>
                                     </ul>
                                 </div>
                                 <div class="tgmenu__action tgmenu__action-three">
                                     <ul class="list-wrap">
                                         <li class="header-contact">
-                                            <a href="tel:+917815899695" class="header-contact-info"><i class="flaticon-telephone"></i>+91 78158 99695                                            </a>
+                                            <a href="tel:+91 9666999392" class="header-contact-info"><i
+                                                    class="flaticon-telephone"></i>+91 96669 99392
+                                            </a>
                                         </li>
                                         <li class="header-btn header-btn-two">
                                             <a href="contact" class="tg-btn">Get a quote</a>
@@ -115,7 +151,7 @@ $metaDescription = $metadata['metaTags'][$current_page]['description'] ?? "Yava 
                 <div class="nav-logo">
                     <a href="index"><img src="assets/img/logo.png" alt="Logo"></a>
                 </div>
-                
+
                 <div class="tgmobile__menu-outer">
                     <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
                 </div>
@@ -137,8 +173,10 @@ $metaDescription = $metadata['metaTags'][$current_page]['description'] ?? "Yava 
     <!-- header-area-end -->
 
 
+
     <!-- main-area -->
     <main class="main-area fix">
+
 <!-- banner-area -->
 <section class="banner__area-three banner__bg-two fix" data-background="assets/img/banner/h3_hero_bg.jpg">
     <div class="container">
@@ -204,7 +242,7 @@ $metaDescription = $metadata['metaTags'][$current_page]['description'] ?? "Yava 
                             <i class="flaticon-analytics"></i>
                         </div>
                         <div class="services__content-three">
-                            <h4 class="title"><a href="#">Teachers Training</a></h4>
+                            <h4 class="title"><a href="teachers-traning">Teachers Training</a></h4>
                             <p>Equipping educators with 21st-century skills for impactful teaching.</p>
                         </div>
                     </div>
@@ -215,7 +253,7 @@ $metaDescription = $metadata['metaTags'][$current_page]['description'] ?? "Yava 
                             <i class="flaticon-email"></i>
                         </div>
                         <div class="services__content-three">
-                            <h4 class="title"><a href="#">Teachers Consultancy</a></h4>
+                            <h4 class="title"><a href="teachers-consultancy">Teachers Consultancy</a></h4>
                             <p>Connecting passionate teachers with schools that value quality education.</p>
                         </div>
                     </div>
@@ -226,7 +264,7 @@ $metaDescription = $metadata['metaTags'][$current_page]['description'] ?? "Yava 
                             <i class="flaticon-statistics"></i>
                         </div>
                         <div class="services__content-three">
-                            <h4 class="title"><a href="#">Academic Support for Students</a></h4>
+                            <h4 class="title"><a href="academic-support">Academic Support for Students</a></h4>
                             <p>Guiding students toward academic excellence with tailored solutions.</p>
                         </div>
                     </div>
@@ -237,16 +275,14 @@ $metaDescription = $metadata['metaTags'][$current_page]['description'] ?? "Yava 
                             <i class="flaticon-report"></i>
                         </div>
                         <div class="services__content-three">
-                            <h4 class="title"><a href="#">Educational Development Advisory</a></h4>
+                            <h4 class="title"><a href="educational-development-advisory">Educational Development Advisory</a></h4>
                             <p>Driving innovation and growth in educational practices.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="services__bottom-content services__bottom-content-two text-center mt-70">
-            <p>Discover Our Financial Services. <a href="#">Explore All Services</a></p>
-        </div>
+
     </div>
     <div class="services__shape-wrap-two">
         <img src="assets/img/h3_services_shape.svg" alt="shape">
@@ -266,11 +302,12 @@ $metaDescription = $metadata['metaTags'][$current_page]['description'] ?? "Yava 
             <div class="col-lg-6">
                 <div class="about__content-three">
                     <div class="section__title mb-15">
-                        <span class="sub-title">Who we are</span>
+                        <span class="sub-title">About Us</span>
                         <h2 class="title">Empowering Educators, Enriching Student Lives</h2>
                     </div>
-                    <p>Dedicated to enhancing teaching quality and student success through innovative training,
-                        consultancy, and academic support. Transforming education for a brighter future.</p>
+                    <p>Having been in the educational industry for more than 25 years, it was an insightful and
+                        enriching experience to understand the need of curriculum development and the demand for the
+                        teacher skill development.</p>
                     <div class="about__list-box-wrap">
                         <div class="about__list-box-item-two">
                             <div class="left-side-content">
@@ -279,12 +316,11 @@ $metaDescription = $metadata['metaTags'][$current_page]['description'] ?? "Yava 
                                 </div>
                                 <div class="content">
                                     <h4 class="title">Our Vision</h4>
-                                    <p>Shaping future-ready educators to meet the demands of 21st-century learning.</p>
+                                    <p>To be a leading platform that nurtures quality, effective, and reflective
+                                        educators who inspire and shape the future of students worldwide.</p>
                                 </div>
                             </div>
-                            <div class="right-side-arrow">
-                                <a href="about"><img src="assets/img/right_arrow.svg" alt="icon" class="injectable"></a>
-                            </div>
+
                         </div>
                         <div class="about__list-box-item-two">
                             <div class="left-side-content">
@@ -292,14 +328,14 @@ $metaDescription = $metadata['metaTags'][$current_page]['description'] ?? "Yava 
                                     <i class="flaticon-startup"></i>
                                 </div>
                                 <div class="content">
-                                    <h4 class="title">Our Commitment</h4>
-                                    <p>Providing expert training, consultancy, and support to enhance education quality.
+                                    <h4 class="title">Our Mission</h4>
+                                    <p>To identify passionate teaching talent, equip them with 21st-century skills, and
+                                        guide them towards excellence in education by connecting them with schools that
+                                        value growth and quality.
                                     </p>
                                 </div>
                             </div>
-                            <div class="right-side-arrow">
-                                <a href="about"><img src="assets/img/right_arrow.svg" alt="icon" class="injectable"></a>
-                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -316,7 +352,7 @@ $metaDescription = $metadata['metaTags'][$current_page]['description'] ?? "Yava 
 <section class="choose__area section-py-130">
     <div class="container">
         <div class="row aling-items-center">
-            <div class="col-lg-6 order-0 order-lg-2">
+            <div class="col-lg-5 order-0 order-lg-2">
                 <div class="choose__img-wrap">
                     <img src="assets/img/images/choose_img01.svg" alt="img">
                     <img src="assets/img/images/choose_img02.svg" alt="img" data-parallax='{"x" : 40 }'>
@@ -325,17 +361,17 @@ $metaDescription = $metadata['metaTags'][$current_page]['description'] ?? "Yava 
                     <img src="assets/img/images/choose_shape03.svg" alt="shape" class="shape-three">
                 </div>
             </div>
-            <div class="col-lg-6">
+            <div class="col-lg-7">
                 <div class="choose__content">
                     <div class="section__title mb-20">
-                        <span class="sub-title">Why Choose Us</span>
-                        <h2 class="title">Why Choose Us for Educational Excellence</h2>
+                        <span class="sub-title">Objective</span>
+                        <h2 class="title">Empowering Educators, Elevating Education Globally</h2>
                     </div>
-                    <p>With 25+ years of expertise, we empower teachers and students through tailored training,
-                        consultancy, and advisory services to ensure growth and success.
+                    <p>Training teachers with 21st-century skills for impactful, quality education.
 
                     </p>
                     <ul class="list-wrap about__list-item-two">
+
                         <li>
                             <div class="icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="11" viewBox="0 0 14 11"
@@ -344,7 +380,7 @@ $metaDescription = $metadata['metaTags'][$current_page]['description'] ?? "Yava 
                                         stroke-width="2.1875" stroke-linecap="round" stroke-linejoin="round" />
                                 </svg>
                             </div>
-                            25+ Years of Educational Expertise
+                            Quality, effective, and reflective teachers for schools
                         </li>
                         <li>
                             <div class="icon">
@@ -354,7 +390,7 @@ $metaDescription = $metadata['metaTags'][$current_page]['description'] ?? "Yava 
                                         stroke-width="2.1875" stroke-linecap="round" stroke-linejoin="round" />
                                 </svg>
                             </div>
-                            Customized Training and Consultancy Services
+                            Partnering with schools to provide the best teachers
                         </li>
                         <li>
                             <div class="icon">
@@ -364,11 +400,81 @@ $metaDescription = $metadata['metaTags'][$current_page]['description'] ?? "Yava 
                                         stroke-width="2.1875" stroke-linecap="round" stroke-linejoin="round" />
                                 </svg>
                             </div>
-                            Focus on 21st-Century Teaching Skills
+                            Ongoing teacher training programs for continuous improvement
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="11" viewBox="0 0 14 11"
+                                    fill="none">
+                                    <path d="M12.091 2L5.091 9L1.90918 5.81818" stroke="currentColor"
+                                        stroke-width="2.1875" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            Curriculum design and development support for schools
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="11" viewBox="0 0 14 11"
+                                    fill="none">
+                                    <path d="M12.091 2L5.091 9L1.90918 5.81818" stroke="currentColor"
+                                        stroke-width="2.1875" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            Workshops tailored for CBSE, ICSE, SSC, and CAIE boards
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="11" viewBox="0 0 14 11"
+                                    fill="none">
+                                    <path d="M12.091 2L5.091 9L1.90918 5.81818" stroke="currentColor"
+                                        stroke-width="2.1875" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            Focused on teacher skill development per NEP and NCF
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="11" viewBox="0 0 14 11"
+                                    fill="none">
+                                    <path d="M12.091 2L5.091 9L1.90918 5.81818" stroke="currentColor"
+                                        stroke-width="2.1875" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            Online academic audit courses with certificates
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="11" viewBox="0 0 14 11"
+                                    fill="none">
+                                    <path d="M12.091 2L5.091 9L1.90918 5.81818" stroke="currentColor"
+                                        stroke-width="2.1875" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            Trusted path for teachers and schools with KEC
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="11" viewBox="0 0 14 11"
+                                    fill="none">
+                                    <path d="M12.091 2L5.091 9L1.90918 5.81818" stroke="currentColor"
+                                        stroke-width="2.1875" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            Mission T1000: Training and placing teachers in organizations
+                        </li>
+                        <li>
+                            <div class="icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="11" viewBox="0 0 14 11"
+                                    fill="none">
+                                    <path d="M12.091 2L5.091 9L1.90918 5.81818" stroke="currentColor"
+                                        stroke-width="2.1875" stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            Yearlong guidance for teachers' career growth and success
                         </li>
                     </ul>
-                    <a href="contact" class="tg-btn">Need a consultancy <img src="assets/img/icons/right_arrow.svg"
-                            alt="" class="injectable"></a>
+
+
                 </div>
             </div>
         </div>
@@ -447,7 +553,7 @@ $metaDescription = $metadata['metaTags'][$current_page]['description'] ?? "Yava 
                             </div>
                             <div class="content">
                                 <span>Call For More Info</span>
-                                <a href="tel:+917815899695">+91 78158 99695</a>
+                                <a href="tel:+919666999392">+91 96669 99392</a>
                             </div>
                         </div>
                         <a href="contact" class="tg-btn tg-border-btn ">Read More <img
@@ -723,7 +829,7 @@ $metaDescription = $metadata['metaTags'][$current_page]['description'] ?? "Yava 
                             </div>
                             <div class="col-md-6">
                                 <div class="form-grp">
-                                    
+
                                     <select id="courses" name="courses">
                                         <option value="" selected disabled>Select Courses</option>
                                         <option value="">Teachers Training</option>
@@ -750,7 +856,6 @@ $metaDescription = $metadata['metaTags'][$current_page]['description'] ?? "Yava 
     </div>
 </section>
 <!-- call-back-area-end -->
-
 
 </main>
 <!-- main-area-end -->
